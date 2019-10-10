@@ -85,7 +85,7 @@ class Register extends Component {
                         <div className="row">
                             <div className="col-md-12 login-sec">
                                 {this.state.error}
-                                <h2 className="text-center">Register Now</h2>
+                                <h2 className="text-center">Register</h2>
                                 <form className="login-form" onSubmit={this.handleSubmit}>
                                     <div className="form-group">
                                         <label className="col-form-label">Your Name</label>
