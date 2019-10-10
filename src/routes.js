@@ -2,9 +2,10 @@ import React from 'react';
 // import NotFound from './pages/NotFound/NotFound';
 // import TourDetail from "./components/TourDetail/TourDetail";
 // import Tours from './components/Tours/Tours';
-// import Content from './components/Content/Content';
 import Register from './components/login/Register';
 import Login from './components/login/Login';
+import Main from './components/main/Main';
+
 // import Ourgallery from './components/Ourgallery/Ourgallery';
 // import Profile from './components/Profile/Profile';
 
@@ -14,16 +15,11 @@ const routes = [
     //     exact: true,
     //     main: ({ match }) => <Content match={match} />
     // },
-    // {
-    //     path: '/tours',
-    //     exact: true,
-    //     main: ({ match }) => <Ourgallery match={match} />
-    // },
-    // {
-    //     path: '/tours/:id',
-    //     exact: false,
-    //     main: ({ match }) => <TourDetail match={match} />
-    // },
+    {
+        path: '/home',
+        exact: true,
+        main: ({ match }) => <Main match={match} />
+    },
     {
         path: '/register',
         exact: true,

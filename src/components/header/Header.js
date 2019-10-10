@@ -2,6 +2,7 @@ import React from 'react';
 import Login from '../login/Login';
 import Register from '../login/Register';
 
+
 function Header() {
     return (
         <div>
@@ -9,27 +10,30 @@ function Header() {
                 <div className="container-fluid">
                     <div className="row main-top-w3l py-2">
                         <div className="col-lg-4 header-most-top">
-                            <p className="text-white text-lg-left text-center">Offer Zone Top Deals &amp; Discounts
-                        <i className="fas fa-shopping-cart ml-1" />
-                            </p>
                         </div>
                         <div className="col-lg-8 header-right mt-lg-0 mt-2">
                             {/* header lists */}
                             <ul>
                                 <li className="text-center border-right text-white">
-                                    <a className="play-icon popup-with-zoom-anim text-white" href="#small-dialog1">
-                                        <i className="fas fa-map-marker mr-2" />Select Location</a>
+                                    <a className="play-icon popup-with-zoom-anim text-white" href="#">
+                                        <select id="agileinfo-nav_search" name="agileinfo_search" className="text-center text-white" required>
+                                            <option value>Select your location</option>
+                                            <option value="Televisions">Ha Noi</option>
+                                            <option value="Headphones">Ho Chi Minh</option>
+                                            <option value="Computers">Da Nang</option>
+                                        </select>
+                                    </a>
                                 </li>
                                 <li className="text-center border-right text-white">
-                                    <a href="#" data-toggle="modal" data-target="#exampleModal" className="text-white">
+                                    <a href="#track-order" data-toggle="modal" data-target="#exampleModal" className="text-white">
                                         <i className="fas fa-truck mr-2" />Track Order</a>
                                 </li>
                                 <li className="text-center border-right text-white">
                                     <i className="fas fa-phone mr-2" /> 001 234 5678
                                 </li>
                                 <li className="text-center border-right text-white">
-                                    <a href="/login" data-toggle="modal" data-target="#exampleModal" className="text-white">
-                                        <i className="fas fa-sign-in-alt mr-2" /> Log In </a>
+                                    <a href="/login" data-toggle="modal" data-target="#exampleModal2" className="text-white">
+                                        <i className="fas fa-sign-out-alt mr-2" />Login </a>
                                 </li>
                                 <li className="text-center text-white">
                                     <a href="/register" data-toggle="modal" data-target="#exampleModal2" className="text-white">
@@ -41,32 +45,7 @@ function Header() {
                     </div>
                 </div>
             </div>
-            <div id="small-dialog1" className="mfp-hide">
-                <div className="select-city">
-                    <h3>
-                        <i className="fas fa-map-marker" /> Please Select Your Location</h3>
-                    <select className="list_of_cities">
-                        <optgroup label="Popular Cities">
-                            <option selected style={{ display: 'none', color: '#eee' }}>Select City</option>
-                            <option>Birmingham</option>
-                            <option>Anchorage</option>
-                            <option>Phoenix</option>
-                            <option>Little Rock</option>
-                            <option>Los Angeles</option>
-                            <option>Denver</option>
-                            <option>Bridgeport</option>
-                            <option>Wilmington</option>
-                            <option>Jacksonville</option>
-                            <option>Atlanta</option>
-                            <option>Honolulu</option>
-                            <option>Boise</option>
-                            <option>Chicago</option>
-                            <option>Indianapolis</option>
-                        </optgroup>
-                    </select>
-                    <div className="clearfix" />
-                </div>
-            </div>
+
             {/* //shop locator (popup) */}
             {/* modals */}
             {/* <Login /> */}
@@ -144,13 +123,16 @@ function Header() {
                             <ul className="navbar-nav ml-auto text-center mr-xl-5">
                                 <li className="nav-item active mr-lg-2 mb-lg-0 mb-2">
                                     <a className="nav-link" href="index.html">Home
-            <span className="sr-only">(current)</span>
+                                        <span className="sr-only">(current)</span>
                                     </a>
+                                </li>
+                                <li className="nav-item mr-lg-2 mb-lg-0 mb-2">
+                                    <a className="nav-link" href="product.html">Live Events</a>
                                 </li>
                                 <li className="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
                                     <a className="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Electronics
-          </a>
+                                        Charities
+                                    </a>
                                     <div className="dropdown-menu">
                                         <div className="agile_inner_drop_nav_info p-4">
                                             <h5 className="mb-3">Mobiles, Computers</h5>
@@ -291,9 +273,6 @@ function Header() {
                                 </li>
                                 <li className="nav-item mr-lg-2 mb-lg-0 mb-2">
                                     <a className="nav-link" href="about.html">About Us</a>
-                                </li>
-                                <li className="nav-item mr-lg-2 mb-lg-0 mb-2">
-                                    <a className="nav-link" href="product.html">New Arrivals</a>
                                 </li>
                                 <li className="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
                                     <a className="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

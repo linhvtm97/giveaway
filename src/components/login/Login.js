@@ -1,55 +1,7 @@
 // import React from 'react';
 import React, { Component } from 'react';
 import Axios from 'axios';
-// import './Login.css'
-// import { connect } from 'react-redux';
-
-// function Login() {
-//     return (
-//         <div>
-//             {/* log in */}
-//             <div className="modal fade" id="exampleModal" tabIndex={-1} role="dialog" aria-hidden="true">
-//                 <div className="modal-dialog" role="document">
-//                     <div className="modal-content">
-//                         <div className="modal-header">
-//                             <h5 className="modal-title text-center">Log In</h5>
-//                             <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-//                                 <span aria-hidden="true">×</span>
-//                             </button>
-//                         </div>
-//                         <div className="modal-body">
-//                             <form action="#" method="post">
-//                                 <div className="form-group">
-//                                     <label className="col-form-label">Username</label>
-//                                     <input type="text" className="form-control" placeholder=" " name="Name" required />
-//                                 </div>
-//                                 <div className="form-group">
-//                                     <label className="col-form-label">Password</label>
-//                                     <input type="password" className="form-control" placeholder=" " name="Password" required />
-//                                 </div>
-//                                 <div className="right-w3l">
-//                                     <input type="submit" className="form-control" defaultValue="Log in" />
-//                                 </div>
-//                                 <div className="sub-w3l">
-//                                     <div className="custom-control custom-checkbox mr-sm-2">
-//                                         <input type="checkbox" className="custom-control-input" id="customControlAutosizing" />
-//                                         <label className="custom-control-label" htmlFor="customControlAutosizing">Remember me?</label>
-//                                     </div>
-//                                 </div>
-//                                 <p className="text-center dont-do mt-3">Don't have an account?
-//                                 <a href="#" data-toggle="modal" data-target="#exampleModal2">
-//                                         Register Now</a>
-//                                 </p>
-//                             </form>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// }
-
-// export default Login;
+import Popup from 'reactjs-popup';
 
 class Login extends Component {
     constructor(props) {
@@ -67,7 +19,7 @@ class Login extends Component {
     }
 
     componentDidMount() {
-        Axios.get('https://giveawayapi.herokuapp.com//api/v1/auth/login')
+        Axios.post('https://giveawayapi.herokuapp.com//api/v1/auth/login')
             .then(res => {
                 const users = res.data;
                 console.log(users);
@@ -128,9 +80,9 @@ class Login extends Component {
         return (
             <div>
                 <section className="login-block">
-                    <div className="container">
+                    <div className="d-flex justify-content-center align-items-center container ">
                         <div className="row">
-                            <div className="col-md-4 login-sec">
+                            <div className="col-md-12 login-sec">
                                 {this.state.error}
                                 <h2 className="text-center">Login Now</h2>
                                 <form className="login-form" onSubmit={this.handleSubmit}>
