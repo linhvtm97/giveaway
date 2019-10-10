@@ -6,40 +6,15 @@ function Footer() {
             <div className="w3l-middlefooter-sec">
                 <div className="container py-md-5 py-sm-4 py-3">
                     <div className="row footer-info w3-agileits-info">
-                        {/* footer categories */}
-                        <div className="col-md-3 col-sm-6 footer-grids">
-                            <h3 className="text-white font-weight-bold mb-3">Categories</h3>
-                            <ul>
-                                <li className="mb-3">
-                                    <a href="product.html">Mobiles </a>
-                                </li>
-                                <li className="mb-3">
-                                    <a href="product.html">Computers</a>
-                                </li>
-                                <li className="mb-3">
-                                    <a href="product.html">TV, Audio</a>
-                                </li>
-                                <li className="mb-3">
-                                    <a href="product2.html">Smartphones</a>
-                                </li>
-                                <li className="mb-3">
-                                    <a href="product.html">Washing Machines</a>
-                                </li>
-                                <li>
-                                    <a href="product2.html">Refrigerators</a>
-                                </li>
-                            </ul>
-                        </div>
-                        {/* //footer categories */}
                         {/* quick links */}
                         <div className="col-md-3 col-sm-6 footer-grids mt-sm-0 mt-4">
                             <h3 className="text-white font-weight-bold mb-3">Quick Links</h3>
                             <ul>
                                 <li className="mb-3">
-                                    <a href="about.html">About Us</a>
+                                    <a href="/about">About Us</a>
                                 </li>
                                 <li className="mb-3">
-                                    <a href="contact.html">Contact Us</a>
+                                    <a href="/contact">Contact Us</a>
                                 </li>
                                 <li className="mb-3">
                                     <a href="help.html">Help</a>
@@ -74,7 +49,7 @@ function Footer() {
                                 </li>
                             </ul>
                         </div>
-                        <div className="col-md-3 col-sm-6 footer-grids w3l-agileits mt-md-0 mt-4">
+                        <div className="col-md-6 col-sm-6 footer-grids w3l-agileits mt-md-0 mt-4">
                             {/* newsletter */}
                             <h3 className="text-white font-weight-bold mb-3">Newsletter</h3>
                             <p className="mb-3">Free Delivery on your first order!</p>
@@ -160,9 +135,7 @@ function Footer() {
             {/* copyright */}
             <div className="copy-right py-3">
                 <div className="container">
-                    <p className="text-center text-white">© 2018 Electro Store. All rights reserved | Design by
-     <a href="http://w3layouts.com"> W3layouts.</a>
-                    </p>
+                    <p className="text-center text-white">© 2018 Give Away Store. All rights reserved</p>
                 </div>
             </div>
         </div>

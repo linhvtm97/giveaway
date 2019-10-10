@@ -2,7 +2,6 @@
 // import React from 'react';
 import React, { Component } from 'react';
 import Axios from 'axios';
-import Popup from 'reactjs-popup';
 
 class Register extends Component {
     constructor(props) {

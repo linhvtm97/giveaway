@@ -9,7 +9,7 @@ class Event extends Component {
                         <img src="images/m1.jpg" alt="" />
                         <div className="men-cart-pro">
                             <div className="inner-men-cart-pro">
-                                <a href="single.html" className="link-product-add-cart">Quick View</a>
+                                <a href="/events/1/details" className="link-product-add-cart">Quick View</a>
                             </div>
                         </div>
                         <span className="product-new-top">New</span>

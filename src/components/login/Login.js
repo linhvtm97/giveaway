@@ -1,7 +1,6 @@
 // import React from 'react';
 import React, { Component } from 'react';
 import Axios from 'axios';
-import Popup from 'reactjs-popup';
 
 class Login extends Component {
     constructor(props) {
@@ -16,18 +15,22 @@ class Login extends Component {
             error: null,
             isLoggedIn: false,
         }
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     componentDidMount() {
-        Axios.post('https://giveawayapi.herokuapp.com//api/v1/auth/login')
-            .then(res => {
-                const users = res.data;
-                console.log(users);
-                // this.setState({ users });
-                // users.map(user => {
-                //     localStorage.setItem(user.email, user.id);
-                // })
-            })
+        // Axios.post('https://giveawayapi.herokuapp.com//api/v1/auth/login', {
+        //     username: 'donor1',
+        //     password: 'password'
+        // })
+        //     .then(res => {
+        //         const users = res.data;
+        //         console.log(users);
+        //         this.setState({ users });
+        //         // users.map(user => {
+        //         //     localStorage.setItem(user.email, user.id);
+        //         // })
+        //     })
     }
 
     checkSignIn = () => {
@@ -51,29 +54,47 @@ class Login extends Component {
     handleSubmit = event => {
         event.preventDefault();
         decodeURI()
-        if (this.state.count !== 0) {
-            decodeURI()
-            // let user = {
-            //     id: localStorage.getItem(this.state.email),
-            //     name: this.state.name,
-            //     email: this.state.email,
-            //     password: this.state.password,
-            // }
-            // console.log(user);
-            // localStorage.setItem('current_user', JSON.stringify(user))
+        window.location.replace("/");
 
-            // this.setState({
-            //     count: 0,
+        // if (this.state.count !== 0) {
+        //     decodeURI()
+        //     console.log(this.state)
+        //     let user = {
+        //         id: localStorage.getItem(this.state.email),
+        //         name: this.state.name,
+        //         email: this.state.email,
+        //         password: this.state.password,
+        //     }
+        //     console.log(user);
+        //     localStorage.setItem('current_user', JSON.stringify(user))
 
-            // })
-            // this.setState(prevState => ({
-            //     isLoggedIn: !prevState.isLoggedIn
-            // }))
-            window.location.replace("/");
-        }
-        else {
-            this.setState({ error: 'Invalid email or password' });
-        }
+        //     this.setState({
+        //         count: 0,
+
+        //     })
+        //     this.setState(prevState => ({
+        //         isLoggedIn: !prevState.isLoggedIn
+        //     }))
+        //     window.location.replace("/");
+        // }
+        // else {
+        //     console.log(this.state)
+        //     this.setState({ error: 'Invalid email or password' });
+        // }
+        console.log(this.state.email)
+        console.log(this.state.password)
+        Axios.post('https://giveawayapi.herokuapp.com//api/v1/auth/login', {
+            username: this.state.email,
+            password: this.state.password
+        })
+            .then(res => {
+                const users = res.data;
+                console.log(users);
+                // this.setState({ users });
+                // users.map(user => {
+                //     localStorage.setItem(user.email, user.id);
+                // })
+            })
     }
 
     render() {

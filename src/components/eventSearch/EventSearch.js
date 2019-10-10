@@ -14,26 +14,20 @@ class EventSearch extends Component {
                     </div>
                     {/* price */}
                     <div className="range border-bottom py-2">
-                        <h3 className="agileits-sear-head mb-3">Price</h3>
+                        <h3 className="agileits-sear-head mb-3">Quick Search</h3>
                         <div className="w3l-range">
                             <ul>
                                 <li>
-                                    <a href="#">Under $1,000</a>
+                                    <a href="#">Start Recently</a>
                                 </li>
                                 <li className="my-1">
-                                    <a href="#">$1,000 - $5,000</a>
+                                    <a href="#">Many people joined</a>
                                 </li>
                                 <li>
-                                    <a href="#">$5,000 - $10,000</a>
+                                    <a href="#">Near you</a>
                                 </li>
                                 <li className="my-1">
-                                    <a href="#">$10,000 - $20,000</a>
-                                </li>
-                                <li>
-                                    <a href="#">$20,000 $30,000</a>
-                                </li>
-                                <li className="mt-1">
-                                    <a href="#">Over $30,000</a>
+                                    <a href="#">Urgent events</a>
                                 </li>
                             </ul>
                         </div>
@@ -92,34 +86,34 @@ class EventSearch extends Component {
                     {/* //reviews */}
                     {/* best seller */}
                     <div className="f-grid py-2">
-                        <h3 className="agileits-sear-head mb-3">Best Seller</h3>
+                        <h3 className="agileits-sear-head mb-3">Recommend events</h3>
                         <div className="box-scroll">
                             <div className="scroll">
                                 <div className="row">
                                     <div className="col-lg-3 col-sm-2 col-3 left-mar">
-                                        <img src="images/k1.jpg" alt="" className="img-fluid" />
+                                        <img src="images/ev1.jpg" alt="" className="img-fluid" />
                                     </div>
                                     <div className="col-lg-9 col-sm-10 col-9 w3_mvd">
-                                        <a href>Samsung Galaxy On7 Prime (Gold, 4GB RAM + 64GB Memory)</a>
-                                        <a href className="price-mar mt-2">$12,990.00</a>
+                                        <a href="">Samsung Galaxy On7 Prime (Gold, 4GB RAM + 64GB Memory)</a>
+                                        <a href="" className="price-mar mt-2">$12,990.00</a>
                                     </div>
                                 </div>
                                 <div className="row my-4">
                                     <div className="col-lg-3 col-sm-2 col-3 left-mar">
-                                        <img src="images/k2.jpg" alt="" className="img-fluid" />
+                                        <img src="images/ev2.jpg" alt="" className="img-fluid" />
                                     </div>
                                     <div className="col-lg-9 col-sm-10 col-9 w3_mvd">
-                                        <a href>Haier 195 L 4 Star Direct-Cool Single Door Refrigerator</a>
-                                        <a href className="price-mar mt-2">$12,499.00</a>
+                                        <a href="">Haier 195 L 4 Star Direct-Cool Single Door Refrigerator</a>
+                                        <a href="" className="price-mar mt-2">$12,499.00</a>
                                     </div>
                                 </div>
                                 <div className="row">
                                     <div className="col-lg-3 col-sm-2 col-3 left-mar">
-                                        <img src="images/k3.jpg" alt="" className="img-fluid" />
+                                        <img src="images/ev3.jpeg" alt="" className="img-fluid" />
                                     </div>
                                     <div className="col-lg-9 col-sm-10 col-9 w3_mvd">
-                                        <a href>Ambrane 13000 mAh Power Bank (P-1310 Premium)</a>
-                                        <a href className="price-mar mt-2">$1,199.00 </a>
+                                        <a href="">Ambrane 13000 mAh Power Bank (P-1310 Premium)</a>
+                                        <a href="" className="price-mar mt-2">$1,199.00 </a>
                                     </div>
                                 </div>
                             </div>
