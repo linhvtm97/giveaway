@@ -87,19 +87,19 @@ class Register extends Component {
                                 <h2 className="text-center">Register</h2>
                                 <form className="login-form" onSubmit={this.handleSubmit}>
                                     <div className="form-group">
-                                        <label className="col-form-label">Your Name</label>
+                                        <div className="text-left"><label className="col-form-label">Your name</label></div>
                                         <input type="text" className="form-control" placeholder=" " name="name" required onChange={this.handleChange} />
                                     </div>
                                     <div className="form-group">
-                                        <label className="col-form-label">Email</label>
+                                        <div className="text-left"><label className="col-form-label">Email</label></div>
                                         <input type="text" className="form-control" placeholder=" " name="email" required onChange={this.handleChange} />
                                     </div>
                                     <div className="form-group">
-                                        <label className="col-form-label">Password</label>
+                                        <div className="text-left"><label className="col-form-label">Password</label></div>
                                         <input type="password" className="form-control" placeholder=" " name="password" id="password1" required onChange={this.handleChange} />
                                     </div>
                                     <div className="form-group">
-                                        <label className="col-form-label">Confirm Password</label>
+                                        <div className="text-left"><label className="col-form-label">Confirm password</label></div>
                                         <input type="password" className="form-control" placeholder=" " name="Confirm Password" id="password2" required onChange={this.handleChange} />
                                     </div>
                                     <div className="right-w3l">
@@ -108,7 +108,7 @@ class Register extends Component {
                                     <div className="sub-w3l">
                                         <div className="custom-control custom-checkbox mr-sm-2">
                                             <input type="checkbox" className="custom-control-input" id="customControlAutosizing2" />
-                                            <label className="custom-control-label" htmlFor="customControlAutosizing2">I Accept to the Terms &amp; Conditions</label>
+                                            <div className="text-left"> <label className="custom-control-label" htmlFor="customControlAutosizing2">I Accept to the Terms &amp; Conditions</label></div>
                                         </div>
                                     </div>
                                 </form>

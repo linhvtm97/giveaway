@@ -120,6 +120,7 @@ label.col-form-label {
     letter-spacing: 1px;
     font-size: 15px;
     color: #000;
+    text-align: left;;
 }
 
 p.dont-do a {

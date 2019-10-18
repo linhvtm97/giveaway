@@ -16,12 +16,13 @@ class Event extends Component {
                     </div>
                     <div className="item-info-product text-center border-top mt-4">
                         <h4 className="pt-1">
-                            <a href="single.html">Samsung Galaxy J7</a>
+                            <a href="single.html">Food Donation For Poor Children</a>
                         </h4>
                         <div className="info-product-price my-2">
-                            <span className="item_price">$200.00</span>
-                            <del>$280.00</del>
+                            <span className="item_price">20/10/2019</span>
+
                         </div>
+                        <span>280 members</span>
                         <div className="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                             <form action="#" method="post">
                                 <fieldset>

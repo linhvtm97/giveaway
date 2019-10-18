@@ -15,7 +15,7 @@ function Charity() {
                                         <p>Sale up to 25% off all in store</p>
                                     </div>
                                     <div class="col-sm-5 offerimg-w3l">
-                                        <img src="images/off1.png" alt="" class="img-fluid" />
+                                        <img src="images/off1.jpg" alt="" class="img-fluid" />
                                     </div>
                                 </div>
                             </div>
@@ -29,7 +29,7 @@ function Charity() {
                                         <p>Free shipping order over $100</p>
                                     </div>
                                     <div class="col-sm-5 offerimg-w3l">
-                                        <img src="images/off2.png" alt="" class="img-fluid" />
+                                        <img src="images/off1.jpg" alt="" class="img-fluid" />
                                     </div>
                                 </div>
                             </div>

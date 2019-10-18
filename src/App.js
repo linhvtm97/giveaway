@@ -22,11 +22,9 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App">
-          <Header />
-          {this.showContentMenus(routes)}
-          <Footer />
-        </div>
+        <Header />
+        {this.showContentMenus(routes)}
+        <Footer />
       </Router>
     );
   }
@@ -35,7 +33,9 @@ class App extends Component {
     var result = null;
     if (routes.length > 0) {
       result = routes.map((route, index) => {
+        console.log(route);
         return (
+          route &&
           <Route
             key={index}
             path={route.path}
@@ -45,9 +45,9 @@ class App extends Component {
         );
       });
     }
+    console.log(result);
     return <Switch>{result}</Switch>;
   }
-
 }
 
 export default App;

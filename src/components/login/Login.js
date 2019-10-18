@@ -18,21 +18,6 @@ class Login extends Component {
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    componentDidMount() {
-        // Axios.post('https://giveawayapi.herokuapp.com//api/v1/auth/login', {
-        //     username: 'donor1',
-        //     password: 'password'
-        // })
-        //     .then(res => {
-        //         const users = res.data;
-        //         console.log(users);
-        //         this.setState({ users });
-        //         // users.map(user => {
-        //         //     localStorage.setItem(user.email, user.id);
-        //         // })
-        //     })
-    }
-
     checkSignIn = () => {
         this.state.users.map(user => {
             if ((user.email === this.state.email) && (user.password === this.state.password)) {
@@ -54,7 +39,8 @@ class Login extends Component {
     handleSubmit = event => {
         event.preventDefault();
         decodeURI()
-        window.location.replace("/");
+        console.log(this.state)
+
 
         // if (this.state.count !== 0) {
         //     decodeURI()
@@ -90,6 +76,8 @@ class Login extends Component {
             .then(res => {
                 const users = res.data;
                 console.log(users);
+                window.location.replace("/");
+
                 // this.setState({ users });
                 // users.map(user => {
                 //     localStorage.setItem(user.email, user.id);
@@ -101,18 +89,18 @@ class Login extends Component {
         return (
             <div>
                 <section className="login-block">
-                    <div className="d-flex justify-content-center align-items-center container ">
+                    <div className="d-flex justify-content-center container ">
                         <div className="row">
-                            <div className="col-md-12 login-sec">
+                            <div className="col-md-16 login-sec">
                                 {this.state.error}
                                 <h2 className="text-center">Login</h2>
                                 <form className="login-form" onSubmit={this.handleSubmit}>
                                     <div className="form-group">
-                                        <label className="col-form-label">Username</label>
+                                        <div className="text-left"><label className="col-form-label">Username</label></div>
                                         <input type="text" className="form-control" placeholder=" " name="email" required onChange={this.handleChange} />
                                     </div>
                                     <div className="form-group">
-                                        <label className="col-form-label">Password</label>
+                                        <div className="text-left"><label className="col-form-label">Password</label></div>
                                         <input type="password" className="form-control" placeholder=" " name="password" required onChange={this.handleChange} />
                                     </div>
                                     <div className="right-w3l">
@@ -121,11 +109,11 @@ class Login extends Component {
                                     <div className="sub-w3l">
                                         <div className="custom-control custom-checkbox mr-sm-2">
                                             <input type="checkbox" className="custom-control-input" id="customControlAutosizing" />
-                                            <label className="custom-control-label" htmlFor="customControlAutosizing">Remember me?</label>
+                                            <div className="text-left"><label className="custom-control-label" htmlFor="customControlAutosizing">Remember me?</label></div>
                                         </div>
                                     </div>
                                     <p className="text-center dont-do mt-3">Don't have an account?
-                                <a href="#" data-toggle="modal" data-target="#exampleModal2">
+                                <a href="/register" data-toggle="modal" data-target="#exampleModal2">
                                             Register Now</a>
                                     </p>
                                 </form>

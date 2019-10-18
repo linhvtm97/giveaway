@@ -85,7 +85,7 @@ class EventSearch extends Component {
                     </div>
                     {/* //reviews */}
                     {/* best seller */}
-                    <div className="f-grid py-2">
+                    {/* <div className="f-grid py-2">
                         <h3 className="agileits-sear-head mb-3">Recommend events</h3>
                         <div className="box-scroll">
                             <div className="scroll">
@@ -118,7 +118,7 @@ class EventSearch extends Component {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                     {/* //best seller */}
                 </div>
             </div>

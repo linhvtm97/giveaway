@@ -1,4 +1,7 @@
 import React from 'react';
+import Popup from "reactjs-popup";
+import Login from '../login/Login';
+import Register from '../login/Register';
 
 function Header() {
     return (
@@ -29,12 +32,17 @@ function Header() {
                                     <i className="fas fa-phone mr-2" /> 001 234 5678
                                 </li>
                                 <li className="text-center border-right text-white">
-                                    <a href="/login" data-toggle="modal" data-target="#exampleModal2" className="text-white">
-                                        <i className="fas fa-sign-out-alt mr-2" />Login </a>
+                                    <Popup trigger={<a href="javascript:void(0);" className="text-white">
+                                        <i className="fas fa-sign-out-alt mr-2" />Login </a>} modal>
+                                        <Login />
+                                    </Popup>
                                 </li>
                                 <li className="text-center text-white">
-                                    <a href="/register" data-toggle="modal" data-target="#exampleModal2" className="text-white">
-                                        <i className="fas fa-sign-out-alt mr-2" />Register </a>
+                                    <Popup trigger={<a href="javascript:void(0);" className="text-white">
+                                        <i className="fas fa-sign-out-alt mr-2" />Register </a>} modal>
+                                        <Register />
+                                    </Popup>
+
                                 </li>
                             </ul>
                             {/* //header lists */}
@@ -120,19 +128,7 @@ function Header() {
                                     <a className="nav-link" href="/about">About Us</a>
                                 </li>
                                 <li className="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
-                                    <a className="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Pages
-          </a>
-                                    <div className="dropdown-menu">
-                                        <a className="dropdown-item" href="product.html">Product 1</a>
-                                        <a className="dropdown-item" href="product2.html">Product 2</a>
-                                        <div className="dropdown-divider" />
-                                        <a className="dropdown-item" href="single.html">Single Product 1</a>
-                                        <a className="dropdown-item" href="single2.html">Single Product 2</a>
-                                        <div className="dropdown-divider" />
-                                        <a className="dropdown-item" href="checkout.html">Checkout Page</a>
-                                        <a className="dropdown-item" href="payment.html">Payment Page</a>
-                                    </div>
+                                    <a className="nav-link" href="/checkout">Checkout Page</a>
                                 </li>
                                 <li className="nav-item">
                                     <a className="nav-link" href="/contact">Contact Us</a>
@@ -142,7 +138,7 @@ function Header() {
                     </nav>
                 </div>
             </div>
-        </div >
+        </div>
     );
 }
 

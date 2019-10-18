@@ -8,6 +8,9 @@ import Contact from './components/contact/Contact';
 import Charity from './components/charities/Charity';
 import EventDetail from './components/event/EventDetail';
 import Products from './components/products/Products';
+import Checkout from './components/payment/Checkout';
+import Payment from './components/payment/Payment';
+
 
 const routes = [
     {
@@ -38,11 +41,13 @@ const routes = [
     {
         path: '/register',
         exact: true,
+        type: 'auth',
         main: ({ match }) => <Register match={match} />
     },
     {
         path: '/login',
         exact: true,
+        type: 'auth',
         main: ({ match }) => <Login match={match} />
     },
     {
@@ -54,7 +59,17 @@ const routes = [
         path: '/contact',
         exact: false,
         main: ({ match }) => <Contact match={match} />
-    }
+    },
+    {
+        path: '/checkout',
+        exact: true,
+        main: ({ match }) => <Checkout match={match} />
+    },
+    {
+        path: '/payment',
+        exact: true,
+        main: ({ match }) => <Payment match={match} />
+    },
 ];
 
 export default routes;

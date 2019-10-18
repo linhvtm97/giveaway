@@ -8733,6 +8733,7 @@ button.bg-dark:focus {
 
 .text-left {
   text-align: left !important;
+  color: #0879c9;
 }
 
 .text-right {
@@ -8741,6 +8742,7 @@ button.bg-dark:focus {
 
 .text-center {
   text-align: center !important;
+  color: #0879c9;
 }
 
 @media (min-width: 576px) {
@@ -8952,7 +8954,7 @@ a.text-dark:hover, a.text-dark:focus {
     min-width: 992px !important;
   }
   .container {
-    min-width: 992px !important;
+    min-width: 500px !important;
   }
   .navbar {
     display: none;
