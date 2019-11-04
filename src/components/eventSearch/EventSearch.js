@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class EventSearch extends Component {
     render() {
         return (
-            <div className="col-lg-3 mt-lg-0 mt-4 p-lg-0">
+            <div className="col-lg">
                 <div className="side-bar p-sm-4 p-3">
                     <div className="search-hotel border-bottom py-2">
                         <h3 className="agileits-sear-head mb-3">Search Here..</h3>
@@ -85,7 +85,7 @@ class EventSearch extends Component {
                     </div>
                     {/* //reviews */}
                     {/* best seller */}
-                    {/* <div className="f-grid py-2">
+                    <div className="f-grid py-2">
                         <h3 className="agileits-sear-head mb-3">Recommend events</h3>
                         <div className="box-scroll">
                             <div className="scroll">
@@ -118,7 +118,7 @@ class EventSearch extends Component {
                                 </div>
                             </div>
                         </div>
-                    </div> */}
+                    </div>
                     {/* //best seller */}
                 </div>
             </div>

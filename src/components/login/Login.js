@@ -2,13 +2,22 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 
+export const statusCode = {
+    OK: 200,
+    BAD_REQUEST: 400,
+    UNAUTHORIZED: 401,
+    FORBIDDEN: 403,
+    NOT_FOUND: 404,
+    INTERNAL_SERVER_ERROR: 500,
+};
+
 class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
             id: '',
             name: '',
-            email: '',
+            username: '',
             password: '',
             users: [],
             count: 0,
@@ -20,11 +29,11 @@ class Login extends Component {
 
     checkSignIn = () => {
         this.state.users.map(user => {
-            if ((user.email === this.state.email) && (user.password === this.state.password)) {
+            if ((user.username === this.state.username) && (user.password === this.state.password)) {
                 this.setState({
                     count: this.state.count + 1,
                     name: user.name,
-                    email: user.email,
+                    username: user.username,
                     id: user.id,
                 })
             }
@@ -38,49 +47,26 @@ class Login extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        decodeURI()
-        console.log(this.state)
-
-
-        // if (this.state.count !== 0) {
-        //     decodeURI()
-        //     console.log(this.state)
-        //     let user = {
-        //         id: localStorage.getItem(this.state.email),
-        //         name: this.state.name,
-        //         email: this.state.email,
-        //         password: this.state.password,
-        //     }
-        //     console.log(user);
-        //     localStorage.setItem('current_user', JSON.stringify(user))
-
-        //     this.setState({
-        //         count: 0,
-
-        //     })
-        //     this.setState(prevState => ({
-        //         isLoggedIn: !prevState.isLoggedIn
-        //     }))
-        //     window.location.replace("/");
-        // }
-        // else {
-        //     console.log(this.state)
-        //     this.setState({ error: 'Invalid email or password' });
-        // }
-        console.log(this.state.email)
-        console.log(this.state.password)
-        Axios.post('https://giveawayapi.herokuapp.com//api/v1/auth/login', {
-            username: this.state.email,
+        if (!this.checkSignIn()) {
+            this.setState({ error: 'Invalid username or password' });
+        }
+        Axios.post('http://give.away.local/api/v1/auth/login', {
+            username: this.state.username,
             password: this.state.password
         })
             .then(res => {
-                const users = res.data;
-                console.log(users);
-                window.location.replace("/");
+                const user = res.data.data.user
+                const status = res.data.meta.status
 
+                if (status === statusCode.OK) {
+                    this.state.isLoggedIn = true;
+                    localStorage.setItem('current_user', JSON.stringify(user))
+                    localStorage.setItem('user', user.name)
+                    window.location.replace("/");
+                }
                 // this.setState({ users });
                 // users.map(user => {
-                //     localStorage.setItem(user.email, user.id);
+                //     localStorage.setItem(user.username, user.id);
                 // })
             })
     }
@@ -92,12 +78,12 @@ class Login extends Component {
                     <div className="d-flex justify-content-center container ">
                         <div className="row">
                             <div className="col-md-16 login-sec">
-                                {this.state.error}
+                                <div className="text-error">{this.state.error}</div>
                                 <h2 className="text-center">Login</h2>
                                 <form className="login-form" onSubmit={this.handleSubmit}>
                                     <div className="form-group">
                                         <div className="text-left"><label className="col-form-label">Username</label></div>
-                                        <input type="text" className="form-control" placeholder=" " name="email" required onChange={this.handleChange} />
+                                        <input type="text" className="form-control" placeholder=" " name="username" required onChange={this.handleChange} />
                                     </div>
                                     <div className="form-group">
                                         <div className="text-left"><label className="col-form-label">Password</label></div>

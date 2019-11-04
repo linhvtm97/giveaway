@@ -1,6 +1,28 @@
 import React, { Component } from 'react';
 
 class Category extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            events: [],
+            isLoading: true,
+            errors: null
+        }
+    }
+
+    componentDidMount() {
+        Axios.get('http://give.away.local//api/v1/categories')
+            .then(res => {
+                const events = res.data;
+                console.log(res);
+                this.setState({ events: res.data.data })
+                // window.location.replace("/");
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+
     render() {
         return (
             <div className="agileits-navi_search">

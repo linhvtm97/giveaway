@@ -31,19 +31,22 @@ function Header() {
                                 <li className="text-center border-right text-white">
                                     <i className="fas fa-phone mr-2" /> 001 234 5678
                                 </li>
-                                <li className="text-center border-right text-white">
+                                <li className={"text-center border-right text-white" + (localStorage.getItem('current_user') != null ? '' : ' d-none')}>
+                                    {"Welcome " + localStorage.getItem('user')}
+                                </li>
+                                <li className={"text-center border-right text-white" + (localStorage.getItem('current_user') != null ? ' d-none' : '')}>
                                     <Popup trigger={<a href="javascript:void(0);" className="text-white">
                                         <i className="fas fa-sign-out-alt mr-2" />Login </a>} modal>
                                         <Login />
                                     </Popup>
                                 </li>
-                                <li className="text-center text-white">
+                                <li className={"text-center text-white" + (localStorage.getItem('current_user') != null ? ' d-none' : '')}>
                                     <Popup trigger={<a href="javascript:void(0);" className="text-white">
                                         <i className="fas fa-sign-out-alt mr-2" />Register </a>} modal>
                                         <Register />
                                     </Popup>
-
                                 </li>
+                                <li></li>
                             </ul>
                             {/* //header lists */}
                         </div>
@@ -119,9 +122,6 @@ function Header() {
                                     <a className="nav-link" href="/events">Live Events</a>
                                 </li>
                                 <li className="nav-item mr-lg-2 mb-lg-0 mb-2">
-                                    <a className="nav-link" href="/charities">Categories</a>
-                                </li>
-                                <li className="nav-item mr-lg-2 mb-lg-0 mb-2">
                                     <a className="nav-link" href="/charities">Charities</a>
                                 </li>
                                 <li className="nav-item mr-lg-2 mb-lg-0 mb-2">
@@ -130,6 +130,9 @@ function Header() {
                                 <li className="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
                                     <a className="nav-link" href="/checkout">Checkout Page</a>
                                 </li>
+                                {/* <li className="nav-item mr-lg-2 mb-lg-0 mb-2">
+                                    <a className="nav-link" href="/charities">Categories</a>
+                                </li> */}
                                 <li className="nav-item">
                                     <a className="nav-link" href="/contact">Contact Us</a>
                                 </li>

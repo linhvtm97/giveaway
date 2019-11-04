@@ -80,7 +80,7 @@ class Register extends Component {
         return (
             <div>
                 <section className="login-block">
-                    <div className="d-flex justify-content-center align-items-center container ">
+                    <div className="d-flex justify-content-center align-items-center ">
                         <div className="row">
                             <div className="col-md-12 login-sec">
                                 {this.state.error}
@@ -89,7 +89,7 @@ class Register extends Component {
                                     <div className="form-group">
                                         <div className="text-left"><label className="col-form-label">Your name</label></div>
                                         <input type="text" className="form-control" placeholder=" " name="name" required onChange={this.handleChange} />
-                                    </div>
+                                    </div> 
                                     <div className="form-group">
                                         <div className="text-left"><label className="col-form-label">Email</label></div>
                                         <input type="text" className="form-control" placeholder=" " name="email" required onChange={this.handleChange} />

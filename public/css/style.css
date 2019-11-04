@@ -1912,7 +1912,10 @@ input[type="checkbox"] {
     display: inline-block;
     margin-left: 15px;
 }
-
+.image-block{
+    width: 200px;
+    height: auto;
+}
 .section_room_pay select {
     padding: 6px 10px;
     border: none;
