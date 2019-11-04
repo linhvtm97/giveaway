@@ -188,9 +188,9 @@ class Payment extends Component {
                                         <div id="tab4" className="tab-grid" style={{ display: 'block' }}>
                                             <div className="row">
                                                 <div className="col-md-6 pay-forms">
-                                                    <img className="pp-img" src="images/paypal.png" alt="Image Alternative text" title="Image Title" />
+                                                    <img className="pp-img" src="images/paypal.png" alt="Alternative text" title="Image Title" />
                                                     <p>Important: You will be redirected to PayPal's website to securely complete your payment.</p>
-                                                    <a className="btn btn-primary">Checkout via Paypal</a>
+                                                    <a href="/#" className="btn btn-primary">Checkout via Paypal</a>
                                                 </div>
                                                 <div className="col-md-6 number-paymk">
                                                     <form action="#" method="post" className="creditly-card-form-2 shopf-sear-headinfo_form">

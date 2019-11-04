@@ -6,7 +6,7 @@ import Events from './components/events/Events';
 import AboutUs from './components/about/AboutUs';
 import Contact from './components/contact/Contact';
 import Charity from './components/charities/Charity';
-import EventDetail from './components/event/EventDetail';
+import EventDetail from './components/events/EventDetail';
 import Products from './components/products/Products';
 import Checkout from './components/payment/Checkout';
 import Payment from './components/payment/Payment';
@@ -19,7 +19,7 @@ const routes = [
         main: ({ match }) => <Events match={match} />
     },
     {
-        path: '//events/1/details',
+        path: '/details',
         exact: true,
         main: ({ match }) => <EventDetail match={match} />
     },

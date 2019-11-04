@@ -5,9 +5,8 @@ import Banner from '../banner/Banner';
 function Main() {
     return (
         <div>
-            <div className="ads-grid py-sm-5 py-4">
-                <Events />
-            </div>
+            <Banner />
+            <Events />
         </div>
     );
 }

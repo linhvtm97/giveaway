@@ -66,17 +66,17 @@ function Footer() {
                                 <div className="social">
                                     <ul>
                                         <li>
-                                            <a className="icon fb" href="#">
+                                            <a className="icon fb" href="/#">
                                                 <i className="fab fa-facebook-f" />
                                             </a>
                                         </li>
                                         <li>
-                                            <a className="icon tw" href="#">
+                                            <a className="icon tw" href="/#">
                                                 <i className="fab fa-twitter" />
                                             </a>
                                         </li>
                                         <li>
-                                            <a className="icon gp" href="#">
+                                            <a className="icon gp" href="/#">
                                                 <i className="fab fa-google-plus-g" />
                                             </a>
                                         </li>

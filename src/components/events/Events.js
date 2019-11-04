@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import Event from '../event/Event';
-import EventSearch from '../eventSearch/EventSearch';
 import Axios from 'axios';
-import moment from 'moment';
 
 
 class Events extends Component {
@@ -10,18 +7,24 @@ class Events extends Component {
         super(props);
         this.state = {
             events: [],
+            categories: [],
             isLoading: true,
             errors: null
         }
     }
 
     componentDidMount() {
-        Axios.get('https://giveawayapi.herokuapp.com//api/v1/events')
+        // Axios.get('https://giveawayapi.herokuapp.com//api/v1/events')
+        Axios.get('http://give.away.local//api/v1/events')
             .then(res => {
-                const events = res.data;
-                console.log(res);
                 this.setState({ events: res.data.data })
-                // window.location.replace("/");
+            })
+            .catch(error => {
+                console.log(error)
+            });
+        Axios.get('http://give.away.local//api/v1/categories')
+            .then(res => {
+                this.setState({ categories: res.data.data })
             })
             .catch(error => {
                 console.log(error)
@@ -29,81 +32,197 @@ class Events extends Component {
     }
 
     render() {
-        const { isLoading, events } = this.state;
+        const { events } = this.state;
+        const { categories } = this.state;
         return (
             <div>
-                <div className="row">
-                    {/* product left */}
-                    <div className="agileinfo-ads-display col-lg-9">
-                        <div className="wrapper">
-                            <h3 className="tittle-w3l text-center">
-                                <span>E</span>xplore
-                                <span>O</span>ur
-                                <span>E</span>vents</h3>
-                            <div className="ads-grid py-sm-5 py-4">
-                                <div className="row">
-                                    <div className="container py-xl-4 py-lg-2">
-                                        <div className="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
-                                            <div className="row">
-                                                {
-                                                    events.map((item, id) => {
-                                                        console.log(item)
-                                                        const { name, status, avatar, start_date, description, goal_item, location } = item;
-                                                        return (
-                                                            <div className="col-md-4 product-men mt-5">
-                                                                <div className="men-pro-item simpleCart_shelfItem">
-                                                                    <div className="men-thumb-item text-center">
-                                                                        <img src={item.avatar} alt="no image" className="img-thumbnail" />
-                                                                        <div className="men-cart-pro">
-                                                                            <div className="inner-men-cart-pro">
-                                                                                <a href="/events/1/details" className="link-product-add-cart">Quick View</a>
-                                                                            </div>
-                                                                        </div>
-                                                                        <span className="product-new-top">New</span>
-                                                                    </div>
-                                                                    <div className="item-info-product text-center border-top mt-4">
-                                                                        <h4 className="pt-1">
-                                                                            <a href="single.html">{item.name}</a>
-                                                                        </h4>
-                                                                        <div className="info-product-price my-2">
-                                                                            <span className="item_price">{`${moment(item.end_date).format('DD-MM-YYYY')} - ${item.start_date}`}</span>
-                                                                            <p>Days left</p>
-                                                                        </div>
-
-                                                                        <span>{item.goal_item}</span>
-                                                                        <div className="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                                                            <form action="#" method="post">
-                                                                                <fieldset>
-                                                                                    <input type="hidden" name="cmd" defaultValue="_cart" />
-                                                                                    <input type="hidden" name="add" defaultValue={1} />
-                                                                                    <input type="hidden" name="business" defaultValue=" " />
-                                                                                    <input type="hidden" name="item_name" defaultValue="Samsung Galaxy J7" />
-                                                                                    <input type="hidden" name="amount" defaultValue={200.00} />
-                                                                                    <input type="hidden" name="discount_amount" defaultValue={1.00} />
-                                                                                    <input type="hidden" name="currency_code" defaultValue="USD" />
-                                                                                    <input type="hidden" name="return" defaultValue=" " />
-                                                                                    <input type="hidden" name="cancel_return" defaultValue=" " />
-                                                                                    <input type="submit" name="submit" defaultValue="Add to cart" className="button btn" />
-                                                                                </fieldset>
-                                                                            </form>
-                                                                        </div>
+                <div className="ads-grid py-sm-5 py-4">
+                    <div className="container py-xl-4 py-lg-2">
+                        <div className="row">
+                            {/* product left */}
+                            <div className="agileinfo-ads-display col-lg-9">
+                                <div className="wrapper">
+                                    {/* first section */}
+                                    <div className="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
+                                        <h3 className="heading-tittle text-center font-italic">All our events</h3>
+                                        <div className="row">
+                                            {events.map((item, id) => {
+                                                return (
+                                                    <div className="col-md-4 product-men mt-5">
+                                                        <div className="men-pro-item simpleCart_shelfItem">
+                                                            <div className="men-thumb-item text-center">
+                                                                <img src={item.avatar} alt="None" className="img-thumbnail" />
+                                                                <div className="men-cart-pro">
+                                                                    <div className="inner-men-cart-pro">
+                                                                        <a href="/details" className="link-product-add-cart">
+                                                                            Quick View
+                                                                </a>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        );
-                                                    })
-                                                }
-                                            </div>
+                                                            <div className="item-info-product text-center border-top mt-4">
+                                                                <h4 className="pt-1">
+                                                                    <a href="/details">{item.name}</a>
+                                                                </h4>
+                                                                <div className="info-product-price my-2">
+                                                                    <p>{item.description}</p>
+                                                                    <del>{item.goal_item}</del>
+                                                                </div>
+                                                                <div className="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+                                                                    <form action="#" method="post">
+                                                                        <fieldset>
+                                                                            <input
+                                                                                type="button"
+                                                                                name="submit"
+                                                                                defaultValue="Donate"
+                                                                                className="button btn"
+                                                                            />
+                                                                        </fieldset>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                );
+                                            })
+                                            }
+                                            {/* //first section */}
                                         </div>
                                     </div>
                                 </div>
-
+                            </div>
+                            {/* //product left */}
+                            {/* product right */}
+                            <div className="col-lg-3 mt-lg-0 mt-4 p-lg-0">
+                                <div className="side-bar p-sm-4 p-3">
+                                    <div className="search-hotel border-bottom py-2">
+                                        <h3 className="agileits-sear-head mb-3">Search Here</h3>
+                                        <form action="#" method="post">
+                                            <input
+                                                type="search"
+                                                placeholder="Event title.."
+                                                name="search"
+                                                required
+                                            />
+                                            <input type="submit" className="button btn" />
+                                        </form>
+                                    </div>
+                                    {/* price */}
+                                    <div className="range border-bottom py-2">
+                                        <h3 className="agileits-sear-head mb-3">Items</h3>
+                                        <div className="w3l-range">
+                                            <ul>
+                                                <li>
+                                                    <a href="/#">Under 10,000</a>
+                                                </li>
+                                                <li className="my-1">
+                                                    <a href="/#">5,000 - 10,000</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/#">1,000 - 5,000</a>
+                                                </li>
+                                                <li className="my-1">
+                                                    <a href="/#">500 - 1,000</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/#">100 - 500</a>
+                                                </li>
+                                                <li className="mt-1">
+                                                    <a href="/#">Under 100</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    {/* //price */}
+                                    {/* reviews */}
+                                    <div className="customer-rev border-bottom left-side py-2">
+                                        <h3 className="agileits-sear-head mb-3">Review</h3>
+                                        <ul>
+                                            <li>
+                                                <a href="/#">
+                                                    <i className="fas fa-star" />
+                                                    <i className="fas fa-star" />
+                                                    <i className="fas fa-star" />
+                                                    <i className="fas fa-star" />
+                                                    <i className="fas fa-star" />
+                                                    <span>5.0</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/#">
+                                                    <i className="fas fa-star" />
+                                                    <i className="fas fa-star" />
+                                                    <i className="fas fa-star" />
+                                                    <i className="fas fa-star" />
+                                                    <span>4.0</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/#">
+                                                    <i className="fas fa-star" />
+                                                    <i className="fas fa-star" />
+                                                    <i className="fas fa-star" />
+                                                    <i className="fas fa-star-half" />
+                                                    <span>3.5</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/#">
+                                                    <i className="fas fa-star" />
+                                                    <i className="fas fa-star" />
+                                                    <i className="fas fa-star" />
+                                                    <span>3.0</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/#">
+                                                    <i className="fas fa-star" />
+                                                    <i className="fas fa-star" />
+                                                    <i className="fas fa-star-half" />
+                                                    <span>2.5</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    {/* //reviews */}
+                                    {/* electronics */}
+                                    <div className="left-side border-bottom py-2">
+                                        <h3 className="agileits-sear-head mb-3">Categories</h3>
+                                        <ul>
+                                            {categories.map((item, id) => {
+                                                return (
+                                                    <li>
+                                                        <input type="checkbox" className="checked" />
+                                                        <span className="span">{item.name}</span>
+                                                    </li>
+                                                );
+                                            })
+                                            }
+                                        </ul>
+                                    </div>
+                                    {/* //electronics */}
+                                    {/* arrivals */}
+                                    <div className="left-side border-bottom py-2">
+                                        <h3 className="agileits-sear-head mb-3">Sort</h3>
+                                        <ul>
+                                            <li>
+                                                <input type="checkbox" className="checked" />
+                                                <span className="span">Ending Soon</span>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" className="checked" />
+                                                <span className="span">Recently Started</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    {/* //arrivals */}
+                                </div>
+                                {/* //product right */}
                             </div>
                         </div>
                     </div>
-                    <div className="col-sm-3"><EventSearch /></div>
                 </div>
-            </div>
+            </div >
         );
     }
 }

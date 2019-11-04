@@ -59,7 +59,7 @@ class Login extends Component {
                 const status = res.data.meta.status
 
                 if (status === statusCode.OK) {
-                    this.state.isLoggedIn = true;
+                    this.setState({ isLoggedIn: true });
                     localStorage.setItem('current_user', JSON.stringify(user))
                     localStorage.setItem('user', user.name)
                     window.location.replace("/");

@@ -17,14 +17,12 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import routes from './routes';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
-import Banner from './components/banner/Banner';
 
 class App extends Component {
   render() {
     return (
       <Router>
         <Header />
-        <Banner />
         {this.showContentMenus(routes)}
         <Footer />
       </Router>
@@ -35,7 +33,6 @@ class App extends Component {
     var result = null;
     if (routes.length > 0) {
       result = routes.map((route, index) => {
-        console.log(route);
         return (
           route &&
           <Route
@@ -47,7 +44,6 @@ class App extends Component {
         );
       });
     }
-    console.log(result);
     return <Switch>{result}</Switch>;
   }
 }

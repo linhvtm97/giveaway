@@ -15,7 +15,7 @@ function Header() {
                             {/* header lists */}
                             <ul>
                                 <li className="text-center border-right text-white">
-                                    <a className="play-icon popup-with-zoom-anim text-white" href="#">
+                                    <a className="play-icon popup-with-zoom-anim text-white" href="/#">
                                         <select id="agileinfo-nav_search" name="agileinfo_search" className="text-center text-white" required>
                                             <option value>Select your location</option>
                                             <option value="Televisions">Ha Noi</option>
@@ -25,7 +25,7 @@ function Header() {
                                     </a>
                                 </li>
                                 <li className="text-center border-right text-white">
-                                    <a href="#track-order" data-toggle="modal" data-target="#exampleModal" className="text-white">
+                                    <a href="/#" data-toggle="modal" data-target="#exampleModal" className="text-white">
                                         <i className="fas fa-truck mr-2" />Track Order</a>
                                 </li>
                                 <li className="text-center border-right text-white">
@@ -35,13 +35,13 @@ function Header() {
                                     {"Welcome " + localStorage.getItem('user')}
                                 </li>
                                 <li className={"text-center border-right text-white" + (localStorage.getItem('current_user') != null ? ' d-none' : '')}>
-                                    <Popup trigger={<a href="javascript:void(0);" className="text-white">
+                                    <Popup trigger={<a href="/#" className="text-white">
                                         <i className="fas fa-sign-out-alt mr-2" />Login </a>} modal>
                                         <Login />
                                     </Popup>
                                 </li>
                                 <li className={"text-center text-white" + (localStorage.getItem('current_user') != null ? ' d-none' : '')}>
-                                    <Popup trigger={<a href="javascript:void(0);" className="text-white">
+                                    <Popup trigger={<a href="/#" className="text-white">
                                         <i className="fas fa-sign-out-alt mr-2" />Register </a>} modal>
                                         <Register />
                                     </Popup>
@@ -68,7 +68,7 @@ function Header() {
                         <div className="col-md-2 logo_agile">
                             <h1>
                                 <a href="home" className="font-weight-bold font-italic">
-                                    <img src="images/logo2.png" className="img-fluid" /> GiveAway
+                                    <img src="images/logo2.png" className="img-fluid" alt="1" /> GiveAway
                             </a>
                             </h1>
                         </div>

@@ -14,10 +14,7 @@ class Charity extends Component {
     componentDidMount() {
         Axios.get('https://giveawayapi.herokuapp.com//api/v1/charities')
             .then(res => {
-                const charities = res.data;
-                console.log(res);
                 this.setState({ charities: res.data.data })
-                // window.location.replace("/");
             })
             .catch(error => {
                 console.log(error)
@@ -25,7 +22,7 @@ class Charity extends Component {
     }
 
     render() {
-        const { isLoading, charities } = this.state;
+        const { charities } = this.state;
         return (
             <div>
                 <div className="join-w3l1 py-sm-5 py-4">
@@ -33,8 +30,6 @@ class Charity extends Component {
                         <div className="row">
                             {
                                 charities.map((item, id) => {
-                                    console.log(item)
-                                    const { name, email, avatar, description, address, phone_number } = item;
                                     return (
                                         <div className="col-lg-6 mt-lg-1 mt-5">
                                             <div className="join-agile text-left p-4">
@@ -43,7 +38,7 @@ class Charity extends Component {
                                                     <p>{item.address}</p>
                                                     <p>{item.description}</p>
                                                 </div>
-                                                <img src={item.avatar} alt="no image" className="img-thumbnail" />
+                                                <img src={item.avatar} alt="None" className="img-thumbnail" />
                                             </div>
                                         </div>
                                     );
