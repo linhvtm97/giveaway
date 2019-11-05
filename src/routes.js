@@ -1,6 +1,7 @@
 import React from 'react';
 import Register from './components/login/Register';
 import Login from './components/login/Login';
+import Logout from './components/login/Logout';
 import Main from './components/main/Main';
 import Events from './components/events/Events';
 import AboutUs from './components/about/AboutUs';
@@ -19,7 +20,7 @@ const routes = [
         main: ({ match }) => <Events match={match} />
     },
     {
-        path: '/details',
+        path: '/events/:value',
         exact: true,
         main: ({ match }) => <EventDetail match={match} />
     },
@@ -29,7 +30,7 @@ const routes = [
         main: ({ match }) => <Charity match={match} />
     },
     {
-        path: '/products',
+        path: '/events/:value/shop',
         exact: true,
         main: ({ match }) => <Products match={match} />
     },
@@ -49,6 +50,12 @@ const routes = [
         exact: true,
         type: 'auth',
         main: ({ match }) => <Login match={match} />
+    },
+    {
+        path: '/logout',
+        exact: true,
+        type: 'auth',
+        main: ({ match }) => <Logout match={match} />
     },
     {
         path: '/about',

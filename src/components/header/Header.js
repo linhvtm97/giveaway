@@ -31,7 +31,7 @@ function Header() {
                                 <li className="text-center border-right text-white">
                                     <i className="fas fa-phone mr-2" /> 001 234 5678
                                 </li>
-                                <li className={"text-center border-right text-white" + (localStorage.getItem('current_user') != null ? '' : ' d-none')}>
+                                <li className={"text-center text-white" + (localStorage.getItem('current_user') != null ? '' : ' d-none')}>
                                     {"Welcome " + localStorage.getItem('user')}
                                 </li>
                                 <li className={"text-center border-right text-white" + (localStorage.getItem('current_user') != null ? ' d-none' : '')}>
@@ -46,7 +46,11 @@ function Header() {
                                         <Register />
                                     </Popup>
                                 </li>
-                                <li></li>
+                                {/* <li className={"text-right text-white" + (localStorage.getItem('current_user') == null ? ' d-none' : '')}>
+                                    <button onClick="console.log('sss')">
+                                        Logout
+                                    </button>
+                                </li> */}
                             </ul>
                             {/* //header lists */}
                         </div>
@@ -141,7 +145,7 @@ function Header() {
                     </nav>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
 

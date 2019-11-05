@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
-
+import { Link } from 'react-router-dom';
 
 class Events extends Component {
     constructor(props) {
         super(props);
         this.state = {
             events: [],
-            categories: [],
+            causes: [],
             isLoading: true,
             errors: null
         }
@@ -22,9 +22,9 @@ class Events extends Component {
             .catch(error => {
                 console.log(error)
             });
-        Axios.get('http://give.away.local//api/v1/categories')
+        Axios.get('http://give.away.local//api/v1/causes')
             .then(res => {
-                this.setState({ categories: res.data.data })
+                this.setState({ causes: res.data.data })
             })
             .catch(error => {
                 console.log(error)
@@ -33,7 +33,7 @@ class Events extends Component {
 
     render() {
         const { events } = this.state;
-        const { categories } = this.state;
+        const { causes } = this.state;
         return (
             <div>
                 <div className="ads-grid py-sm-5 py-4">
@@ -46,39 +46,32 @@ class Events extends Component {
                                     <div className="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
                                         <h3 className="heading-tittle text-center font-italic">All our events</h3>
                                         <div className="row">
-                                            {events.map((item, id) => {
+                                            {events.map((item) => {
                                                 return (
-                                                    <div className="col-md-4 product-men mt-5">
+                                                    <div key={item.id} className="col-md-4 product-men mt-5">
                                                         <div className="men-pro-item simpleCart_shelfItem">
                                                             <div className="men-thumb-item text-center">
                                                                 <img src={item.avatar} alt="None" className="img-thumbnail" />
                                                                 <div className="men-cart-pro">
                                                                     <div className="inner-men-cart-pro">
-                                                                        <a href="/details" className="link-product-add-cart">
-                                                                            Quick View
-                                                                </a>
+                                                                        <Link to={"/events/" + item.id} className="link-product-add-cart">Quick View</Link>
                                                                     </div>
                                                                 </div>
+                                                                <span className="product-new-top">New</span>
                                                             </div>
                                                             <div className="item-info-product text-center border-top mt-4">
                                                                 <h4 className="pt-1">
-                                                                    <a href="/details">{item.name}</a>
+                                                                    <Link to={"/events/" + item.id}>{item.name}</Link>
                                                                 </h4>
                                                                 <div className="info-product-price my-2">
                                                                     <p>{item.description}</p>
-                                                                    <del>{item.goal_item}</del>
+                                                                    <span className="small lh-120">{item.goal_item} items</span>
                                                                 </div>
                                                                 <div className="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                                                    <form action="#" method="post">
-                                                                        <fieldset>
-                                                                            <input
-                                                                                type="button"
-                                                                                name="submit"
-                                                                                defaultValue="Donate"
-                                                                                className="button btn"
-                                                                            />
-                                                                        </fieldset>
-                                                                    </form>
+                                                                    <Link to={"/events/" + item.id + "/shop"}>
+                                                                        <button type="button" className="btn btn-primary">Shop now</button>
+
+                                                                    </Link>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -104,7 +97,7 @@ class Events extends Component {
                                                 name="search"
                                                 required
                                             />
-                                            <input type="submit" className="button btn" />
+                                            <input type="submit" className="btn-primary btn" value="Search" />
                                         </form>
                                     </div>
                                     {/* price */}
@@ -187,11 +180,11 @@ class Events extends Component {
                                     {/* //reviews */}
                                     {/* electronics */}
                                     <div className="left-side border-bottom py-2">
-                                        <h3 className="agileits-sear-head mb-3">Categories</h3>
+                                        <h3 className="agileits-sear-head mb-3">Causes</h3>
                                         <ul>
-                                            {categories.map((item, id) => {
+                                            {causes.map((item) => {
                                                 return (
-                                                    <li>
+                                                    <li key={item.id}>
                                                         <input type="checkbox" className="checked" />
                                                         <span className="span">{item.name}</span>
                                                     </li>

@@ -833,8 +833,8 @@ h3.tittle-w3l span {
 }
 
 .search-hotel form input[type="submit"] {
-    background: url(../images/search.png) no-repeat 13px 11px #0879c9;
-    width: 44px;
+    background: no-repeat 13px 11px #007bff;
+    width: 52px;
     height: 39px;
     border: none;
     padding: 0;
