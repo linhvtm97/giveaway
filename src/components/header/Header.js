@@ -71,7 +71,7 @@ function Header() {
                         {/* logo */}
                         <div className="col-md-2 logo_agile">
                             <h1>
-                                <a href="home" className="font-weight-bold font-italic">
+                                <a href="/" className="font-weight-bold font-italic">
                                     <img src="images/logo2.png" className="img-fluid" alt="1" /> GiveAway
                             </a>
                             </h1>
