@@ -1,0 +1,1 @@
+export const ALL_CHARITIES = "ALL_CHARITIES"; 

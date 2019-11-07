@@ -3,6 +3,8 @@ import Axios from 'axios';
 import { Link } from 'react-router-dom';
 import Popup from "reactjs-popup";
 import Cart from '../cart/Cart';
+import callApi from "./../../untils/apiCaller";
+
 
 class Products extends Component {
     constructor(props) {
@@ -17,19 +19,16 @@ class Products extends Component {
 
     componentDidMount() {
         // Axios.get('https://giveawayapi.herokuapp.com//api/v1/items')
-        Axios.get('http://give.away.local//api/v1/items')
+        // Axios.get('http://give.away.local//api/v1/items')
+        callApi('items', "GET", null)
             .then(res => {
                 this.setState({ products: res.data.data })
             })
-            .catch(error => {
-                console.log(error)
-            });
-        Axios.get('http://give.away.local//api/v1/categories')
+        // Axios.get('https://giveawayapi.herokuapp.com//api/v1/categories')
+        // Axios.get('http://give.away.local//api/v1/categories')
+        callApi('categories', "GET", null)
             .then(res => {
                 this.setState({ categories: res.data.data })
-            })
-            .catch(error => {
-                console.log(error)
             })
     }
 

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import Axios from 'axios';
 import { Link } from 'react-router-dom';
-import ProgressBar from 'react-bootstrap/ProgressBar'
+import ProgressBar from 'react-bootstrap/ProgressBar';
+import callApi from "./../../untils/apiCaller";
+
+
 
 class Events extends Component {
     constructor(props) {
@@ -16,25 +18,23 @@ class Events extends Component {
 
     componentDidMount() {
         // Axios.get('https://giveawayapi.herokuapp.com//api/v1/events')
-        Axios.get('http://give.away.local//api/v1/events')
+        // Axios.get('http://give.away.local//api/v1/events')
+        callApi('events', "GET", null)
             .then(res => {
                 this.setState({ events: res.data.data })
             })
-            .catch(error => {
-                console.log(error)
-            });
-        Axios.get('http://give.away.local//api/v1/causes')
+        // Axios.get('https://giveawayapi.herokuapp.com//api/v1/causes')
+        // Axios.get('http://give.away.local//api/v1/causes')
+        callApi('events', "GET", null)
             .then(res => {
                 this.setState({ causes: res.data.data })
-            })
-            .catch(error => {
-                console.log(error)
             })
     }
 
     render() {
         const { events } = this.state;
         const { causes } = this.state;
+        
         return (
             <div>
                 <div className="ads-grid py-sm-5 py-4">

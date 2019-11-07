@@ -14,8 +14,8 @@ class EventDetail extends Component {
     }
 
     componentDidMount() {
-        // Axios.get('https://giveawayapi.herokuapp.com//api/v1/events')
-        Axios.get('http://give.away.local//api/v1/events/' + this.props.match.params.value)
+        Axios.get('https://giveawayapi.herokuapp.com//api/v1/events')
+        // Axios.get('http://give.away.local//api/v1/events/' + this.props.match.params.value)
             .then(res => {
                 this.setState({ event: res.data.data })
                 this.setState({ cause: res.data.data.cause })
