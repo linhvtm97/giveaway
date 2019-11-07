@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
+import ProgressBar from 'react-bootstrap/ProgressBar'
 
 class Events extends Component {
     constructor(props) {
@@ -63,9 +64,21 @@ class Events extends Component {
                                                                 <h4 className="pt-1">
                                                                     <Link to={"/events/" + item.id}>{item.name}</Link>
                                                                 </h4>
+                                                                <p className="text-left">
+                                                                    <i className="fas fa-tags mr-2"></i>
+                                                                    {item.cause.name}</p>
+                                                                <p>
+                                                                    Start at: {item.start_date} <br />Due at: {item.end_date}
+                                                                </p>
                                                                 <div className="info-product-price my-2">
-                                                                    <p>{item.description}</p>
-                                                                    <span className="small lh-120">{item.goal_item} items</span>
+                                                                    <p>{item.description.slice(0, 60)}...
+                                                                    </p>
+                                                                    <Link to={"/events/" + item.id}>
+                                                                        Read more
+                                                                    </Link>
+
+                                                                    <p className="text-center"><span></span><i className="fas fa-shopping-cart"></i> {item.current_items} / {item.goal_item}</p>
+                                                                    <ProgressBar animated variant="success" now={Math.floor(parseInt(item.current_items, 10) * 100 / parseInt(item.goal_item, 10))} />
                                                                 </div>
                                                                 <div className="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                                                                     <Link to={"/events/" + item.id + "/shop"}>

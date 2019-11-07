@@ -25,7 +25,7 @@ class Banner extends Component {
                         />
 
                         <Carousel.Caption>
-                            <h3>Share things, Share love, Share moment</h3>
+                            <h3>Share things, Share moment</h3>
                             <p>The more you give, the more you receive</p>
                         </Carousel.Caption>
                     </Carousel.Item>

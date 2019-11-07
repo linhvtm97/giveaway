@@ -46,7 +46,7 @@ class Products extends Component {
                             <div className="row">
                                 <div className="col-3 agileits_search">
                                     {/* <h5 className="agileits-sear-head mb-3">Categories</h5> */}
-                                    <select className="form-control mr-sm-2">
+                                    <select className="form-control">
                                         <option >All</option>
                                         {categories.map((item) => {
                                             return (
