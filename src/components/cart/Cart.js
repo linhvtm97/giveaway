@@ -31,52 +31,7 @@ class Cart extends Component {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Product 1</td>
-                                <td>100$</td>
-                                <td>
-                                    <a href="/#">
-                                        <i className="fas fa-times" />
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Product 2</td>
-                                <td>100$</td>
-                                <td>
-                                    <a href="/#">
-                                        <i className="fas fa-times" />
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Product 3</td>
-                                <td>100$</td>
-                                <td>
-                                    <a href="/#">
-                                        <i className="fas fa-times" />
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">4</th>
-                                <td>Product 4</td>
-                                <td>100$</td>
-                                <td>
-                                    <a href="/#">
-                                        <i className="fas fa-times" />
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr className="total">
-                                <th scope="row">5</th>
-                                <td>Total</td>
-                                <td>400$</td>
-                                <td />
-                            </tr>
+                            {this.props.children}
                         </tbody>
                     </table>
                 </div>
@@ -88,7 +43,7 @@ class Cart extends Component {
                         data-dismiss="modal"
                     >
                         Close
-          </button>
+            </button>
                     <button className="btn btn-primary">Checkout</button>
                 </div>
             </div>

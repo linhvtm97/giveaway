@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Axios from 'axios';
+// import Axios from 'axios';
 import { Link } from 'react-router-dom';
 import Popup from "reactjs-popup";
-import Cart from '../cart/Cart';
+import CartContainer from './../../containers/CartContainer';
 import callApi from "./../../untils/apiCaller";
 
 
@@ -72,7 +72,7 @@ class Products extends Component {
                                 <div className="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
                                     <h3 className="heading-tittle text-center font-italic">Shop now</h3>
                                     <div className="row">
-                                        {products.map((item) => {
+                                        {products.map((item,index) => {
                                             return (
                                                 <div key={item.id} className="col-md-4 product-men mt-5">
                                                     <div className="men-pro-item simpleCart_shelfItem">
@@ -95,7 +95,11 @@ class Products extends Component {
                                                             <div className="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                                                                 <Popup trigger={<button type="button" className="btn btn-primary">Add to cart</button>
                                                                 } modal>
-                                                                    <Cart />
+                                                                    <CartContainer 
+                                                                        key={index}
+                                                                        cart={item}
+                                                                        index={index}
+                                                                    />
                                                                 </Popup>
                                                             </div>
                                                         </div>
