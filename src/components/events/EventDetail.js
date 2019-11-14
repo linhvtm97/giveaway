@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
+import callApi from "./../../untils/apiCaller";
 
 class EventDetail extends Component {
     constructor(props) {
@@ -14,15 +15,12 @@ class EventDetail extends Component {
     }
 
     componentDidMount() {
-        Axios.get('https://giveawayapi.herokuapp.com//api/v1/events')
-        // Axios.get('http://give.away.local//api/v1/events/' + this.props.match.params.value)
+        let {match} = this.props;
+        let id = match.params.value;
+        callApi(`events/${id}`, "GET", null)
             .then(res => {
                 this.setState({ event: res.data.data })
-                this.setState({ cause: res.data.data.cause })
             })
-            .catch(error => {
-                console.log(error)
-            });
     }
     render() {
         const { event } = this.state;

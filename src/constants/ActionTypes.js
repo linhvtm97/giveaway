@@ -1,1 +1,1 @@
-export const ALL_CHARITIES = "ALL_CHARITIES"; 
+export const ALL_EVENTS = "ALL_EVENTS"; 

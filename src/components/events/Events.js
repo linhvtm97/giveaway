@@ -17,15 +17,11 @@ class Events extends Component {
     }
 
     componentDidMount() {
-        // Axios.get('https://giveawayapi.herokuapp.com//api/v1/events')
-        // Axios.get('http://give.away.local//api/v1/events')
         callApi('events', "GET", null)
             .then(res => {
                 this.setState({ events: res.data.data })
             })
-        // Axios.get('https://giveawayapi.herokuapp.com//api/v1/causes')
-        // Axios.get('http://give.away.local//api/v1/causes')
-        callApi('events', "GET", null)
+        callApi('causes', "GET", null)
             .then(res => {
                 this.setState({ causes: res.data.data })
             })
